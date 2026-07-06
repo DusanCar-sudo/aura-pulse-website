@@ -1,0 +1,269 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/core/**",
+              "tweaks-panel.jsx"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Cormorant Garamond|IBM Plex Mono|Space Grotesk))/i]",
+        "message": "Font not provided by the design system. Available: Cormorant Garamond, IBM Plex Mono, Space Grotesk."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|href|onClick|children|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: variant, href, onClick, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:solid|ghost)$/]",
+        "message": "<Button> variant must be one of 'solid' | 'ghost'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Card'] > JSXAttribute > JSXIdentifier[name!=/^(?:tone|title|children|key|ref|className|style|children)$/]",
+        "message": "<Card> doesn't accept that prop. Declared props: tone, title, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Card'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:terra|navy)$/]",
+        "message": "<Card> tone must be one of 'terra' | 'navy'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Label'] > JSXAttribute > JSXIdentifier[name!=/^(?:tone|children|key|ref|className|style|children)$/]",
+        "message": "<Label> doesn't accept that prop. Declared props: tone, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Label'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:cyan|ink)$/]",
+        "message": "<Label> tone must be one of 'cyan' | 'ink'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatBlock'] > JSXAttribute > JSXIdentifier[name!=/^(?:value|label|key|ref|className|style|children)$/]",
+        "message": "<StatBlock> doesn't accept that prop. Declared props: value, label."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TerminalLine'] > JSXAttribute > JSXIdentifier[name!=/^(?:text|kind|key|ref|className|style|children)$/]",
+        "message": "<TerminalLine> doesn't accept that prop. Declared props: text, kind."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TerminalLine'] > JSXAttribute[name.name='kind'] > Literal[value!=/^(?:prompt|input|ok|muted)$/]",
+        "message": "<TerminalLine> kind must be one of 'prompt' | 'input' | 'ok' | 'muted'."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "Button": {
+        "replaces": []
+      },
+      "Card": {
+        "replaces": []
+      },
+      "Label": {
+        "replaces": []
+      },
+      "StatBlock": {
+        "replaces": []
+      },
+      "TerminalLine": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--accent-primary",
+      "--accent-primary-cli",
+      "--accent-secondary",
+      "--aura-black",
+      "--aura-black-warm",
+      "--aura-border",
+      "--aura-border-navy",
+      "--aura-cream-100",
+      "--aura-cream-200",
+      "--aura-cream-300",
+      "--aura-cream-muted",
+      "--aura-cyan",
+      "--aura-cyan-dim",
+      "--aura-error",
+      "--aura-gold",
+      "--aura-ruby",
+      "--aura-slate",
+      "--aura-slate-dim",
+      "--aura-slate-dimmer",
+      "--aura-success",
+      "--aura-success-bright",
+      "--aura-surface-1",
+      "--aura-surface-2",
+      "--aura-taupe",
+      "--aura-terracotta",
+      "--aura-terracotta-deep",
+      "--aura-terracotta-ink",
+      "--aura-terracotta-site",
+      "--aura-warning",
+      "--border-default",
+      "--border-warm",
+      "--font-mono",
+      "--font-sans",
+      "--font-serif-display",
+      "--leading-body",
+      "--leading-display",
+      "--leading-tight",
+      "--radius-lg",
+      "--radius-md",
+      "--radius-sm",
+      "--radius-xl",
+      "--section-pad-x",
+      "--section-pad-y",
+      "--shadow-terminal",
+      "--space-1",
+      "--space-2",
+      "--space-3",
+      "--space-4",
+      "--space-5",
+      "--space-6",
+      "--space-7",
+      "--space-8",
+      "--space-9",
+      "--status-error",
+      "--status-success",
+      "--status-warning",
+      "--surface-card",
+      "--surface-page",
+      "--surface-page-warm",
+      "--surface-recessed",
+      "--text-body",
+      "--text-body-md",
+      "--text-body-sm",
+      "--text-body-warm",
+      "--text-display-lg",
+      "--text-display-md",
+      "--text-display-xl",
+      "--text-heading",
+      "--text-mono-body",
+      "--text-mono-label",
+      "--text-mono-lg",
+      "--text-muted",
+      "--text-muted-warm",
+      "--tracking-label",
+      "--tracking-nav",
+      "--tracking-tight"
+    ],
+    "tokenKinds": {
+      "--aura-black": "color",
+      "--aura-black-warm": "color",
+      "--aura-surface-1": "color",
+      "--aura-surface-2": "color",
+      "--aura-border": "color",
+      "--aura-border-navy": "color",
+      "--aura-cream-100": "color",
+      "--aura-cream-200": "color",
+      "--aura-cream-300": "color",
+      "--aura-cream-muted": "color",
+      "--aura-taupe": "color",
+      "--aura-slate": "color",
+      "--aura-slate-dim": "color",
+      "--aura-slate-dimmer": "color",
+      "--aura-terracotta": "color",
+      "--aura-terracotta-site": "color",
+      "--aura-terracotta-deep": "color",
+      "--aura-terracotta-ink": "color",
+      "--aura-cyan": "color",
+      "--aura-cyan-dim": "color",
+      "--aura-ruby": "color",
+      "--aura-gold": "color",
+      "--aura-success": "color",
+      "--aura-success-bright": "color",
+      "--aura-warning": "color",
+      "--aura-error": "color",
+      "--surface-page": "color",
+      "--surface-page-warm": "color",
+      "--surface-card": "color",
+      "--surface-recessed": "color",
+      "--border-default": "color",
+      "--border-warm": "color",
+      "--text-heading": "font",
+      "--text-body": "font",
+      "--text-body-warm": "font",
+      "--text-muted": "font",
+      "--text-muted-warm": "font",
+      "--accent-primary": "color",
+      "--accent-primary-cli": "color",
+      "--accent-secondary": "color",
+      "--status-success": "color",
+      "--status-warning": "color",
+      "--status-error": "color",
+      "--font-serif-display": "font",
+      "--font-mono": "font",
+      "--font-sans": "font",
+      "--text-display-xl": "font",
+      "--text-display-lg": "font",
+      "--text-display-md": "font",
+      "--text-mono-label": "font",
+      "--text-mono-body": "font",
+      "--text-mono-lg": "font",
+      "--text-body-md": "font",
+      "--text-body-sm": "font",
+      "--tracking-label": "font",
+      "--tracking-nav": "font",
+      "--tracking-tight": "font",
+      "--leading-body": "font",
+      "--leading-tight": "font",
+      "--leading-display": "font",
+      "--space-1": "spacing",
+      "--space-2": "spacing",
+      "--space-3": "spacing",
+      "--space-4": "spacing",
+      "--space-5": "spacing",
+      "--space-6": "spacing",
+      "--space-7": "spacing",
+      "--space-8": "spacing",
+      "--space-9": "spacing",
+      "--section-pad-y": "spacing",
+      "--section-pad-x": "spacing",
+      "--radius-sm": "radius",
+      "--radius-md": "radius",
+      "--radius-lg": "radius",
+      "--radius-xl": "radius",
+      "--shadow-terminal": "shadow"
+    },
+    "fontFamilies": [
+      "Cormorant Garamond",
+      "IBM Plex Mono",
+      "Space Grotesk"
+    ]
+  }
+}

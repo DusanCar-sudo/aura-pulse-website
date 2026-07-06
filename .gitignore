@@ -1,0 +1,14 @@
+# Vercel / build
+node_modules/
+dist/
+.next/
+
+# Local uploads & thumbnails (not part of the site content)
+uploads/
+.thumbnail
+
+# OS junk
+.DS_Store
+Thumbs.db
+*.swp
+*.swo

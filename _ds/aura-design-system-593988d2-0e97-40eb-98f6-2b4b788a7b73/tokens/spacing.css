@@ -1,0 +1,24 @@
+/* Aura spacing + shape tokens. The live site uses vw-based section padding
+   and small consistent radii (6-14px) — no large rounded-corner cards. */
+
+:root {
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 2.6rem;
+  --space-8: 3.5rem;
+  --space-9: 5rem;
+
+  --section-pad-y: 7rem;
+  --section-pad-x: 7vw;
+
+  --radius-sm: 6px;   /* buttons, install box */
+  --radius-md: 10px;  /* rowlist container */
+  --radius-lg: 12px;  /* terminal, status card */
+  --radius-xl: 14px;  /* grid3 container */
+
+  --shadow-terminal: inset 0 0 0 1px rgba(110, 208, 234, 0.16);
+}

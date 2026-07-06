@@ -1,0 +1,67 @@
+/* Aura color tokens
+   Source of truth: src/cli/display.ts + src/cli/diamond.ts (terminal palette,
+   the "true" voice of the product) and site/index.html (marketing site).
+   The CLI's terracotta (#cc785c) and the site's terracotta (#c2674c) are the
+   same family — the two surfaces already agree. */
+
+:root {
+  /* ---- base neutrals ---- */
+  --aura-black: #0c1322;        /* site background — deep ink navy */
+  --aura-black-warm: #1a1a1a;   /* CLI/terminal true-black surface */
+  --aura-surface-1: #101a2c;    /* raised panel on navy (rowlist, term) */
+  --aura-surface-2: #0a1020;    /* deepest recessed panel (terminal, install box) */
+  --aura-border: #4e3d30;       /* warm hairline border (CLI boxes) */
+  --aura-border-navy: rgba(110, 208, 234, 0.16); /* cool hairline border (site) */
+
+  /* ---- cream / text-on-dark ---- */
+  --aura-cream-100: #f3ece4;    /* brightest heading cream */
+  --aura-cream-200: #ede0cc;    /* CLI stream text */
+  --aura-cream-300: #eaf1f7;    /* site body text (cooler cream) */
+  --aura-cream-muted: #c8b5a0;  /* muted cream, secondary CLI text */
+  --aura-taupe: #8a7768;        /* tertiary text, tool detail text */
+  --aura-slate: #aebccd;        /* site body copy on navy */
+  --aura-slate-dim: #73849a;    /* site tertiary / stat labels */
+  --aura-slate-dimmer: #56657a; /* footer, scroll hint */
+
+  /* ---- primary accent: terracotta ---- */
+  --aura-terracotta: #cc785c;      /* CLI accent — tool names, headers */
+  --aura-terracotta-site: #c2674c; /* site accent — buttons, section bg */
+  --aura-terracotta-deep: #411e13; /* text-on-terracotta (dark) */
+  --aura-terracotta-ink: #2a140d;  /* headings on terracotta sections */
+
+  /* ---- secondary accent: cyan (site-only, "tech" accent) ---- */
+  --aura-cyan: #6ed0ea;
+  --aura-cyan-dim: #9fdcec;
+
+  /* ---- ruby + gold: the diamond/crown motif (from renderDiamond ascii art) ---- */
+  --aura-ruby: #9b1b30;
+  --aura-gold: #c9a84c;
+
+  /* ---- semantic status ---- */
+  --aura-success: #5a9e6e;
+  --aura-success-bright: #7fcf95;
+  --aura-warning: #d4903a;
+  --aura-error: #b15439;
+
+  /* ---- semantic aliases ---- */
+  --surface-page: var(--aura-black);
+  --surface-page-warm: var(--aura-black-warm);
+  --surface-card: var(--aura-surface-1);
+  --surface-recessed: var(--aura-surface-2);
+  --border-default: var(--aura-border-navy);
+  --border-warm: var(--aura-border);
+
+  --text-heading: var(--aura-cream-100);
+  --text-body: var(--aura-slate);
+  --text-body-warm: var(--aura-cream-200);
+  --text-muted: var(--aura-slate-dim);
+  --text-muted-warm: var(--aura-taupe);
+
+  --accent-primary: var(--aura-terracotta-site);
+  --accent-primary-cli: var(--aura-terracotta);
+  --accent-secondary: var(--aura-cyan);
+
+  --status-success: var(--aura-success);
+  --status-warning: var(--aura-warning);
+  --status-error: var(--aura-error);
+}

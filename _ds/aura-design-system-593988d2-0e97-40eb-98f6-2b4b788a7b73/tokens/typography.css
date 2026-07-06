@@ -1,0 +1,31 @@
+/* Aura type tokens — three families, each with one job. Never mixed within
+   the same text element. Source: site/index.html font stack + CLI monospace
+   conventions (chalk/box-drawing output is always monospace). */
+
+:root {
+  --font-serif-display: 'Cormorant Garamond', Georgia, serif;   /* headlines, taglines — always light/medium weight, often italic for voice lines */
+  --font-mono: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;  /* labels, kickers, code, terminal, stats, nav */
+  --font-sans: 'Space Grotesk', system-ui, sans-serif;           /* body copy, UI chrome */
+
+  /* display serif scale — clamp() fluid sizes matching the live site */
+  --text-display-xl: clamp(3rem, 7vw, 6.2rem);
+  --text-display-lg: clamp(2.1rem, 4.6vw, 3.4rem);
+  --text-display-md: clamp(1.4rem, 2.6vw, 2.1rem);
+
+  /* mono scale */
+  --text-mono-label: 0.72rem;   /* kickers, section labels — always uppercase, wide tracking */
+  --text-mono-body: 0.84rem;
+  --text-mono-lg: 0.96rem;
+
+  /* sans scale */
+  --text-body-md: 1.08rem;
+  --text-body-sm: 0.92rem;
+
+  --tracking-label: 0.3em;   /* section kickers: "01 — IDENTITY" */
+  --tracking-nav: 0.06em;
+  --tracking-tight: 0.01em;
+
+  --leading-body: 1.65;
+  --leading-tight: 0.96;     /* display headlines */
+  --leading-display: 1.14;
+}
